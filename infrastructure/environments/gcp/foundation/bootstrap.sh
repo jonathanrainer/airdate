@@ -38,3 +38,10 @@ gcloud storage buckets create gs://airdate-foundation-state --public-access-prev
 gcloud storage buckets update gs://airdate-foundation-state --versioning
 echo "✅ Foundation Terraform Bucket Created"
 read -rp "Press enter to continue"
+
+echo "🎛️ Enabling required APIs"
+gcloud services enable cloudbilling.googleapis.com
+gcloud services enable cloudresourcemanager.googleapis.com
+echo "✅ Required APIs enabled"
+read -rp "Press enter to continue"
+
