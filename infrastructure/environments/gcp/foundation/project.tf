@@ -16,21 +16,6 @@ locals {
   ]
 }
 
-import {
-  to = google_project.airdate_foundation
-  id = "airdate-foundation"
-}
-
-import {
-  to = google_project_service.enabled_apis["cloudresourcemanager.googleapis.com"]
-  id = "airdate-foundation/cloudresourcemanager.googleapis.com"
-}
-
-import {
-  to = google_project_service.enabled_apis["cloudbilling.googleapis.com"]
-  id = "airdate-foundation/cloudbilling.googleapis.com"
-}
-
 resource "google_project" "airdate_foundation" {
   name                = "Airdate Foundation"
   project_id          = "airdate-foundation"
