@@ -1,7 +1,7 @@
 locals {
   projects = [
     {
-      name : "frontdoor"
+      name : "airdate-frontdoor"
       display_name : "Frontdoor Service"
       parent_folder : google_folder.services.id
     }
