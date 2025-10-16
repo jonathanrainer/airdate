@@ -1,6 +1,7 @@
 locals {
   workspaces = [
     "gcp-organisation-structure",
+    "frontdoor"
   ]
 }
 
