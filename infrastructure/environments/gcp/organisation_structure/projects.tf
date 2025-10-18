@@ -20,4 +20,5 @@ module "airdate_project" {
   enabled_apis = each.value.enabled_apis
   project_id   = each.value.name
   project_name = each.value.display_name
+  folder_id    = each.value.parent_folder
 }

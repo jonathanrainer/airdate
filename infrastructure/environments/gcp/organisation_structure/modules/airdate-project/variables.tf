@@ -9,3 +9,7 @@ variable "project_name" {
 variable "enabled_apis" {
   type = list(string)
 }
+
+variable "folder_id" {
+  type = string
+}
