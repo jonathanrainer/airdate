@@ -1,11 +1,3 @@
-terraform {
-  required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = "6.38.0"
-    }
-  }
-}
 data "google_iam_role" "artifact_registry_reader" {
   name = "roles/artifactregistry.createOnPushWriter)"
 }
