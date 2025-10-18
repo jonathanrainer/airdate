@@ -6,7 +6,7 @@ resource "google_organization_iam_binding" "folder_viewer" {
     "user:jonathan@airdate.cloud"
   ]
   org_id = data.google_organization.airdate.id
-  role   = data.google_iam_role.folder_viewer
+  role   = data.google_iam_role.folder_viewer.name
 }
 
 data "google_iam_role" "browser" {
@@ -18,5 +18,5 @@ resource "google_organization_iam_binding" "browser" {
     "user:jonathan@airdate.cloud"
   ]
   org_id = data.google_organization.airdate.id
-  role   = data.google_iam_role.browser
+  role   = data.google_iam_role.browser.name
 }
