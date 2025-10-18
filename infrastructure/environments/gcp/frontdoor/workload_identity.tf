@@ -27,7 +27,7 @@ resource "google_iam_workload_identity_pool_provider" "github_actions" {
   attribute_condition = "assertion.repository_owner == 'jonathanrainer' && assertion.repository == 'airdate'"
 }
 
-resource "google_service_account_iam_binding" "terraform_workload_identity_user" {
+resource "google_service_account_iam_binding" "github_actions_workload_identity_user" {
   members = [
     "principalSet://iam.googleapis.com/projects/${data.google_project.project.number}/locations/global/workloadIdentityPools/${google_iam_workload_identity_pool.github_actions.workload_identity_pool_id}/attribute.repository/jonathanrainer/airdate"
   ]
