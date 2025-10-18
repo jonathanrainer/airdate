@@ -3,6 +3,7 @@ resource "tfe_workspace" "workspace" {
   organization          = var.organization_name
   working_directory     = var.working_directory
   file_triggers_enabled = false
+  auto_apply            = true
   dynamic "vcs_repo" {
     for_each = var.vcs_integration ? [{}] : []
     content {
@@ -10,7 +11,6 @@ resource "tfe_workspace" "workspace" {
       branch                     = "main"
       github_app_installation_id = "ghain-LBfvqR9WHhE8quWk"
       ingress_submodules         = false
-      auto_apply                 = true
     }
   }
 }
