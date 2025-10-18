@@ -2,6 +2,10 @@ data "google_iam_role" "artifact_registry_reader" {
   name = "roles/artifactregistry.createOnPushWriter"
 }
 
+data "google_iam_role" "artifact_registry_admin" {
+  name = "roles/artifactregistry.repoAdmin"
+}
+
 resource "google_artifact_registry_repository" "frontdoor_repo" {
   location      = "us-central1"
   repository_id = "frontdoor"
@@ -23,4 +27,12 @@ resource "google_artifact_registry_repository_iam_binding" "writer" {
   ]
   repository = google_artifact_registry_repository.frontdoor_repo.name
   role       = data.google_iam_role.artifact_registry_reader.name
+}
+
+resource "google_artifact_registry_repository_iam_binding" "repo_admin" {
+  members = [
+    "user:jonathan@airdate.cloud"
+  ]
+  repository = google_artifact_registry_repository.frontdoor_repo.name
+  role       = data.google_iam_role.artifact_registry_admin.name
 }
