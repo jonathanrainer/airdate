@@ -22,3 +22,8 @@ module "airdate_project" {
   project_name = each.value.display_name
   folder_id    = each.value.parent_folder
 }
+
+moved {
+  from = google_project.airdate_project["airdate-frontdoor"]
+  to   = module.airdate_project["airdate-frontdoor"].google_project.airdate_foundation
+}
