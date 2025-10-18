@@ -1,5 +1,5 @@
 data "google_iam_role" "artifact_registry_reader" {
-  name = "roles/artifactregistry.createOnPushWriter)"
+  name = "roles/artifactregistry.createOnPushWriter"
 }
 
 resource "google_artifact_registry_repository" "frontdoor_repo" {
