@@ -34,5 +34,5 @@ resource "google_project_iam_binding" "repo_admin" {
     "user:jonathan@airdate.cloud"
   ]
   role    = data.google_iam_role.artifact_registry_admin.name
-  project = data.google_project.project.name
+  project = data.google_project.project.project_id
 }
