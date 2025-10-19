@@ -3,7 +3,7 @@ data "google_iam_role" "artifact_registry_reader" {
 }
 
 data "google_iam_role" "artifact_registry_admin" {
-  name = "roles/artifactregistry.repoAdmin"
+  name = "roles/artifactregistry.admin"
 }
 
 resource "google_artifact_registry_repository" "frontdoor_repo" {
@@ -29,10 +29,10 @@ resource "google_artifact_registry_repository_iam_binding" "writer" {
   role       = data.google_iam_role.artifact_registry_reader.name
 }
 
-resource "google_artifact_registry_repository_iam_binding" "repo_admin" {
+resource "google_project_iam_binding" "repo_admin" {
   members = [
     "user:jonathan@airdate.cloud"
   ]
-  repository = google_artifact_registry_repository.frontdoor_repo.name
-  role       = data.google_iam_role.artifact_registry_admin.name
+  role    = data.google_iam_role.artifact_registry_admin.name
+  project = data.google_project.project.name
 }
