@@ -1,5 +1,5 @@
 provider "google" {
-  project = "airdate-frontdoor"
+  project = "airdate-library"
   region  = "us-central1"
   zone    = "us-central1-c"
 }

@@ -2,7 +2,7 @@ locals {
   projects = [
     {
       name : "airdate-frontdoor"
-      display_name : "Frontdoor (Front Service)"
+      display_name : "Frontdoor"
       parent_folder : google_folder.services.id
       enabled_apis : [
         "artifactregistry.googleapis.com"
@@ -10,7 +10,7 @@ locals {
     },
     {
       name : "airdate-library"
-      display_name : "Library (Persistence)"
+      display_name : "Library"
       parent_folder : google_folder.services.id
       enabled_apis : [
         "firestore.googleapis.com"
