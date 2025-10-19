@@ -2,10 +2,18 @@ locals {
   projects = [
     {
       name : "airdate-frontdoor"
-      display_name : "Frontdoor Service"
+      display_name : "Frontdoor"
       parent_folder : google_folder.services.id
       enabled_apis : [
         "artifactregistry.googleapis.com"
+      ]
+    },
+    {
+      name : "airdate-library"
+      display_name : "Library"
+      parent_folder : google_folder.services.id
+      enabled_apis : [
+        "firestore.googleapis.com"
       ]
     }
   ]
